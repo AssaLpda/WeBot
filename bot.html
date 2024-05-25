@@ -73,6 +73,9 @@
             color: #007bff;
         }
     </style>
+
+
+
 </head>
 <body>
 
@@ -84,6 +87,7 @@
     <i id="darkModeToggle" class="fas fa-lightbulb dark-mode-toggle"></i>
             
         </div>
+      
 
         <div class="container">
             <h4 class="saludo-bienvenida">Saludo de bienvenida</h4>
@@ -152,7 +156,27 @@
                 <button id="btnEditar" class="btn btn-secondary">Editar</button>
                 <button id="btnGuardar" class="btn btn-success" style="display: none;">Guardar</button>
             </div>
+            <script>
+                // Verificar si el usuario está autenticado
+                if (localStorage.getItem('isAuthenticated') !== 'true') {
+                    // Si no está autenticado, redirigir al login
+                    window.location.href = 'bot.html'; // Cambia 'login.html' por el nombre real de tu página de login
+                }
+            </script>
+            
+            <button id="logoutButton" class="btn btn-danger">Cerrar sesión</button>
+            
+            <script>
+                document.getElementById('logoutButton').addEventListener('click', function() {
+                    // Eliminar el indicador de sesión de localStorage
+                    localStorage.removeItem('isAuthenticated');
+                    // Redirigir al login
+                    window.location.href = 'index.html'; // Cambia 'login.html' por el nombre real de tu página de login
+                });
+            </script>
+           
         </div>
+
     </div>
 
     <script src="js/login.js"></script>

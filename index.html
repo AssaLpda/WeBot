@@ -6,11 +6,21 @@
     <title>Login web</title>
     <link rel="stylesheet" href="css/style.css">
     <script src="js/forgot_password.js"></script>
-    
+
     <link rel="stylesheet" href="cl-icon/css/all.min.css">
 </head>
 
+
+
 <body>
+    <script>
+        // Verificar si el usuario está autenticado
+        if (localStorage.getItem('isAuthenticated') !== 'true') {
+            // Si no está autenticado, redirigir al login
+            window.location.href = 'index.html'; // Cambia 'login.html' por el nombre real de tu página de login
+        }
+    </script>
+
     <div class="wrapper">
         <form id="loginForm" class="form">
             <h1 class="title">Inicio</h1>
@@ -30,6 +40,7 @@
             <p class="para"></p>
         </div>
     </div>
+    
     <script src="js/login.js"></script>
 </body>
 </html>
